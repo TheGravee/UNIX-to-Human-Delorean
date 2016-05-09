@@ -1,4 +1,4 @@
-UNIX-to-Human Deloran
+UNIX-to-Human Delorean
 =====
 
 A web app that uses JQuery to convert UNIX timestamps to GMT and vice versa.
