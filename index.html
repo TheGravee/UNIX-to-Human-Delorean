@@ -1,0 +1,174 @@
+<html>
+<head>
+    <link rel="icon" href="favicon.ico">
+    <title>Delorean - Unix time conversion</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+        <!--
+        function timeToHuman() {
+            var theDate = new Date(document.bttf.timeStamp.value * 1000);
+            dateString = theDate.toGMTString();
+            document.bttf.result.value = dateString;
+
+            greatScott();
+
+        }
+        function humanToTime() {
+            var humDate = new Date(Date.UTC(document.bttf2.inYear.value,
+                    (stripLeadingZeroes(document.bttf2.inMon.value) - 1),
+                    stripLeadingZeroes(document.bttf2.inDay.value),
+                    stripLeadingZeroes(document.bttf2.inHr.value),
+                    stripLeadingZeroes(document.bttf2.inMin.value),
+                    stripLeadingZeroes(document.bttf2.inSec.value)));
+            document.bttf2.result.value = (humDate.getTime() / 1000.0);
+
+            greatScott();
+        }
+
+        function greatScott() {
+            var sounds = [ "audio/121gigawatts.mp3",
+                "audio/deloreanTires.mp3",
+                "audio/greatscott2.mp3",
+                "audio/intothefuture2.mp3",
+                "audio/timemachine2.mp3",
+                "audio/cando90.mp3",
+                "audio/docgasps.mp3",
+                "audio/greatscott3.mp3",
+                "audio/tothefuture.mp3",
+                "audio/fluxing.mp3",
+                "audio/delorean.mp3"];
+            var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+            document.getElementById("player").innerHTML="<embed src=\""+soundFile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+        }
+
+        function stripLeadingZeroes(input) {
+            if ((input.length > 1) && (input.substr(0, 1) == "0"))
+                return input.substr(1);
+            else
+                return input;
+        }
+        //  End -->
+    </script>
+
+</head>
+
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;color:#ffffff;background: black url('img/bttf2.gif') repeat;">
+<span id="version" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:6pt; color:#cccccc;">v1.2</span>
+    <table style="background-color: black; margin-top:20px; margin-bottom:50px; padding:10px;" align="center" border="0" cellpadding="10" cellspacing="0" width="500">
+        <tbody>
+        <tr>
+
+            <td width="500" valign="top" class="content">
+                <div align="center">
+                    <span style="font-size:36pt; color:#D40E1C;"><strong>WELCOME TO THE</strong></span>
+                    <br>
+                    <span><img src="img/UnixTime.png"/><br><span style="font-size:36pt; color:#D40E1C;"><strong>DELOREAN</strong></span></span>
+                </div><hr color="#F8BF27" style="color:#F8BF27;">
+
+                <form name="bttf">
+                        <table align="center" border="0">
+                            <tbody>
+                            <tr>
+                                <td align="center">
+                                    <p><span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; font-size:14pt;"><b>Convert 10-digit Unix time to a Human
+                                        Date/Time:</b><br></span>
+                                        <span style="font-size: 10pt; color: #ffffff;"><em>(based on how many seconds have passed since 1/1/1970)</em></span><br><br>
+                                        <span style="font-size: 14pt; color: #ffffff;">UNIX Time:</span><br>
+                                        <input type="text"  name="timeStamp" size="10"><br>
+                                        <input style="margin-top:5px;" type="button" value="88Mph" onclick="timeToHuman();"><br><br>
+                                        <span style="font-size: 14pt; color: #ffffff;">Destination Time:</span><br>
+                                        <input name="result" type="text" value="" size="30" readonly="">
+                                    </p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                </form>
+                <hr color="#F8BF27" style="color:#F8BF27;">
+                <form name="bttf2">
+                    <center>
+                        <table border="0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <table border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="11" align="center"><p><span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; font-size:14pt;"><b>Convert Human Date/Time to a Unix time:</b><br></span>
+                                                <span style="font-size: 10pt; color: #ffffff;"><em>(based on how many seconds have passed since 1/1/1970)</em></span><br><br></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:10pt; text-align: center;">Month:</td>
+                                            <td style="font-size:10pt; text-align: center;">&nbsp;</td>
+                                            <td style="font-size:10pt; text-align: center;">Day:</td>
+                                            <td style="font-size:10pt; text-align: center;">&nbsp;</td>
+                                            <td style="font-size:10pt; text-align: center;">Year:</td>
+                                            <td style="font-size:10pt; text-align: center;">&nbsp;</td>
+                                            <td style="font-size:10pt; text-align: center;">Hour:</td>
+                                            <td style="font-size:10pt; text-align: center;">&nbsp;</td>
+                                            <td style="font-size:10pt; text-align: center;">Minutes:</td>
+                                            <td style="font-size:10pt; text-align: center;">&nbsp;</td>
+                                            <td style="font-size:10pt; text-align: center;">Seconds:</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" size="4" maxlength="2" name="inMon"></td>
+                                            <td>/</td>
+                                            <td><input type="text" size="4" maxlength="2" name="inDay"></td>
+                                            <td>/</td>
+                                            <td><input type="text" size="4" maxlength="4" name="inYear"></td>
+                                            <td>at</td>
+                                            <td><input type="text" size="4" maxlength="2" name="inHr"></td>
+                                            <td>:</td>
+                                            <td><input type="text" size="4" maxlength="2" name="inMin"></td>
+                                            <td>:</td>
+                                            <td><input type="text" size="4" maxlength="2" name="inSec"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="11" align="center"><input style="margin-top:5px;" type="button" value="88Mph"
+                                                                                   onclick="humanToTime();">
+                                        </tr>
+                                        <tr>
+                                            <td colspan="11" align="center">
+                                                <br>
+                                                <span style="font-size: 14pt; color: #ffffff;">Last Time Departed:</span><br>
+                                                <input name="result" type="text" value="" size="10" readonly=""></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </center>
+                </form>
+                <hr color="#F8BF27" style="color:#F8BF27;">
+                    <center>
+                        <img src="img/DTM2.png">
+                        <br>
+                        <audio id="music" autoplay loop controls>
+
+                        Your browser does not support the audio element. Travel to the future to hear it.
+                    </audio></center>
+                <script>
+                    var video = document.getElementById('music');
+                    video.volume = 0.2;
+
+                    var sounds = [ "bgaudio/bttfTheme.mp3",
+                        "bgaudio/Huey_Lewis_-_Power_of_Love.mp3",
+                        "bgaudio/backintime.mp3"];
+                    var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+
+                    document.getElementById("music").innerHTML="<source src=\""+soundFile+"\" type=\"audio/mpeg\" />";
+                </script>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <span id='player'></span>
+</body>
+</html>
